@@ -9,23 +9,28 @@ load_dotenv()
     # max_retries=2,
 # )
 
-from config import Config 
+# from config import Config 
 
 def prompt_json(prompt: str):
-    config = Config(prompt=prompt) 
-    return config  
-    # chat_completion = client.chat.completions.create(
-    #     messages=[
-    #         {
-    #             "role": "user",
-    #             "content": prompt,
-    #         }
-    #     ],
-    #     stream=False,
-    #     model="gpt-4o",
-    #     # model="llama3-8b-8192",
-    #     response_format={
-    #         "type": "json_object",
-    #     },
-    # )
-    # return chat_completion.choices[0].message.content
+    # for openAI 
+    # config = Config(prompt=prompt) 
+    # return config  
+
+    # for Groq 
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+        stream=False,
+        model="gpt-4o",
+        # model="llama3-8b-8192",
+        response_format={
+            "type": "json_object",
+        },
+    )
+    return chat_completion.choices[0].message.content
+
+GROQ_API_KEY = "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"

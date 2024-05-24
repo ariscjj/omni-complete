@@ -3,7 +3,6 @@ import os
 
 PROMPT_ROOT_DIR = os.getenv("PROMPT_ROOT_DIR")
 
-
 def build_omni_complete_prompt(input_value, topic="Vue.js", topic_dir="vuejs"):
 
     prompt = open(f"{PROMPT_ROOT_DIR}/prompt.txt", "r").read()
