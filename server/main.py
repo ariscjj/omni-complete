@@ -32,6 +32,7 @@ def get_autocomplete():
 @app.route("/use-autocomplete", methods=["POST"])
 def do_autocomplete():
     autocomplete_object = request.json
+    print(autocomplete_object)
     input_data = autocomplete_object["input"]
     completion = autocomplete_object["completion"]
     print(f"Received autocomplete object: input={input_data}, completion={completion}")
