@@ -9,7 +9,13 @@ openai.api_key = 'your-api-key-here'
 query_embedding_store = {} 
 
 # The first is a list of embeddings values, the second is the number of hits 
-{"What is the capital of France?": ([0.123, 0.234, ...], 10)} 
+# For example: 
+# Dictionary Datastructure: key three values 
+# Value 1; Embeddings 
+# Value 2: Completion 
+# Value 3: Hit Count 
+# {"What is the capital of France?": ([0.123, 0.234, ...], 10)} 
+# {"What is": {"embeddings": [,....] "completions": {"javascript" : 3, "UnoCSS": 4}}} 
 
 # Function to get GPT-3 embeddings
 def get_gpt3_embeddings(text, model="text-embedding-ada-002"):
@@ -20,8 +26,10 @@ def get_gpt3_embeddings(text, model="text-embedding-ada-002"):
 # Function to find the closest matching query
 def find_closest_query(new_query, threshold=0.8):
     new_query_embedding = get_gpt3_embeddings(new_query)
-    stored_embeddings = list(query_embedding_store.values())
-    queries = list(query_embedding_store.keys())
+    # list comprehension to only get embeddings for each query  
+    # stored_embeddings = list(query_embedding_store.values())
+    stored_embeddings = [value["embeddings"] for value in data.values()]  
+    # queries = list(query_embedding_store.keys())
 
     # Calculate similarity
     similarities = cosine_similarity([new_query_embedding], stored_embeddings)
@@ -29,16 +37,19 @@ def find_closest_query(new_query, threshold=0.8):
     max_index = np.argmax(similarities)
     max_embedding = stored_embeddings[max_index]
 
-    print(queries[max_index])
+    # print(queries[max_index])
     if max_similarity >= threshold:
+        # returns query with max_index 
         return queries[max_index], max_embedding  
     else:
         return None, max_embedding  
 
 # Function to add a new query and embedding
-def add_new_query(new_query):
+def add_new_query(new_query, new_completion, 1):
     embedding = get_gpt3_embeddings(new_query)
-    query_embedding_store[new_query] = embedding
+    query_embedding_store[new_query]["embedding"] = embedding
+    query_embedding_store[new_query]["completions"][new_completion] = 1 
+#     [embedding, new_completion, 1)
     return embedding
 
 # Example usage
@@ -51,4 +62,3 @@ if matched_query:
 else:
     new_embedding = add_new_query(new_query)
     print(f"New query '{new_query}' added with embedding {new_embedding[:5]}...")  # Print first 5 values for brevity
-
