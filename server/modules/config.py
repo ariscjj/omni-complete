@@ -17,7 +17,6 @@ class Config:
     Configuration class for managing various API keys and clients.
     """
 
-
     ACTION_AGENT_AZURE_API_KEY = os.environ.get("ACTION_AGENT_AZURE_API_KEY")
     AZURE_3_5_KEY = os.environ.get("AZURE_3_5_KEY")
     ORGANIZATION_OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
