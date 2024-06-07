@@ -83,7 +83,7 @@ def do_autocomplete():
 
     end_time = time.time() 
     run_time = str(int((end_time - start_time) * 100)/100)
-    print("Prev autocomplete ", run_time)
+    print("Do_autocomplete function runtime:", run_time)
     return jsonify(success=True)
 
 

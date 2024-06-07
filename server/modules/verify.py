@@ -2,8 +2,11 @@ import openai
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
+
+import verify  
+
 # Initialize OpenAI API
-openai.api_key = 'your-api-key-here'
+openai.api_key = 'sk-proj-GKlfiJ96ukgMRvjpHUMxT3BlbkFJuOfoyrVFxdEVK3uxxkva'
 
 # Example storage for precomputed embeddings
 query_embedding_store = {} 
@@ -15,7 +18,7 @@ query_embedding_store = {}
 # Value 2: Completion 
 # Value 3: Hit Count 
 # {"What is the capital of France?": ([0.123, 0.234, ...], 10)} 
-# {"What is": {"embeddings": [,....] "completions": {"javascript" : 3, "UnoCSS": 4}}} 
+# ["What is": {"embeddings": [,....] "completions": {"javascript" : 3, "UnoCSS": 4}}] 
 
 # Function to get GPT-3 embeddings
 def get_gpt3_embeddings(text, model="text-embedding-ada-002"):
