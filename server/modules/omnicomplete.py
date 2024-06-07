@@ -1,5 +1,6 @@
 import json
 import os
+import greet
 
 PROMPT_ROOT_DIR = os.getenv("PROMPT_ROOT_DIR")
 

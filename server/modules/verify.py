@@ -2,11 +2,10 @@ import openai
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
-
 import verify  
 
 # Initialize OpenAI API
-openai.api_key = 'sk-proj-GKlfiJ96ukgMRvjpHUMxT3BlbkFJuOfoyrVFxdEVK3uxxkva'
+# openai.api_key = ''
 
 # Example storage for precomputed embeddings
 query_embedding_store = {} 

@@ -36,4 +36,3 @@ def prompt_json(prompt: str):
     print("TIME TO CREATE COMPLETION: ", total_time) 
     return chat_completion.choices[0].message.content
 
-GROQ_API_KEY = "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"
