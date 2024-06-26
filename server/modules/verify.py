@@ -1,7 +1,6 @@
 import openai
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
-
 import verify  
 
 # Initialize OpenAI API
@@ -12,7 +11,8 @@ query_embedding_store = {}
 
 # The first is a list of embeddings values, the second is the number of hits 
 # For example: 
-# Dictionary Datastructure: key three values 
+# Dictionary Datastructure: key + three values 
+# Key: Prompt Beginning
 # Value 1; Embeddings 
 # Value 2: Completion 
 # Value 3: Hit Count 

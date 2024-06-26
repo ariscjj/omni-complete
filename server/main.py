@@ -19,7 +19,9 @@ CORS(app)
 topics = [("Vue.js", "vuejs")]
 topic_index = 0
 
-#check if moderated
+# check if moderated
+# in get_autocomplete  -- do not autocomplete if
+# start of prompt is inappropriae
 def check_moderation(input_data): 
     print("INPUT DATA", input_data)
     response = client.moderations.create(input=input_data)
@@ -42,7 +44,6 @@ def get_autocomplete():
         
         print("topics[topic_index][0])", topics[topic_index][0]) 
         print("topic_dir" , topics[topic_index][1])
-
 
         prompt = omnicomplete.build_omni_complete_prompt(
             input_data, topic=topics[topic_index][0], topic_dir=topics[topic_index][1]
