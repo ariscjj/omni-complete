@@ -13,7 +13,6 @@ print("API KEY HERE", apikey)
 client = OpenAI( api_key=apikey )
 
 app = Flask(__name__)
-
 CORS(app)
 
 topics = [("Vue.js", "vuejs")]
@@ -77,16 +76,26 @@ def do_autocomplete():
     completion = autocomplete_object["completion"]
     print(f"Received autocomplete object: input={input_data}, completion={completion}")
     print("INCREMENT COMPLETIONS") 
+    # True if appropriate 
+    if_appropriate = check_flagged(input_data + completion) 
+    if if_appropriate: 
+        omnicomplete.increment_or_create_previous_completions(
+            input_data, completion, topics[topic_index][1]
+        )
+        return jsonify(success=True)
+    print("Flagged as inappropriate")
+    return jsonify(success=False)
 
-    omnicomplete.increment_or_create_previous_completions(
-        input_data, completion, topics[topic_index][1]
-    )
 
-    end_time = time.time() 
-    run_time = str(int((end_time - start_time) * 100)/100)
-    print("Do_autocomplete function runtime:", run_time)
-    return jsonify(success=True)
 
+def check_flagged(input_data):
+    prompt = omnicomplete.build_omni_complete_prompt(
+    input_data, topic=topics[topic_index][0], topic_dir=topics[topic_index][1]
+)
+    response = llm.prompt_json_flag(prompt)
+    if response == "True": 
+        return True
+    return False 
 
 if __name__ == "__main__":
     app.run(debug=True)

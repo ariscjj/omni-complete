@@ -36,3 +36,19 @@ def prompt_json(prompt: str):
     print("TIME TO CREATE COMPLETION: ", total_time) 
     return chat_completion.choices[0].message.content
 
+def prompt_json_flag(prompt:str): 
+    chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+        stream=False,
+        # model="gpt-4o",
+        model="llama3-8b-8192",
+        response_format={
+            "type": "text",
+        },
+    )
+
