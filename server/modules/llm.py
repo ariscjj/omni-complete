@@ -51,4 +51,5 @@ def prompt_json_flag(prompt:str):
             "type": "text",
         },
     )
+    return chat_completion.choices[0].message.content
 

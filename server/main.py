@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
-from flask import Flask, request, jsonify
-from modules import llm, omnicomplete
+from flask import Flask, request, jsonify 
+from modules import llm, omnicomplete, omnicomplete_flag
 from flask_cors import CORS
 import time 
 
@@ -36,7 +36,7 @@ def get_autocomplete():
     start_time = time.time() 
     input_data = request.json["input"]
     
-    flagged = check_moderation(input_data)
+#    flagged = check_moderation(input_data)
     flagged = False 
     if not flagged: # check_moderation(input_data):  
         print("NOT MODERATED")
@@ -75,7 +75,7 @@ def do_autocomplete():
     input_data = autocomplete_object["input"]
     completion = autocomplete_object["completion"]
     print(f"Received autocomplete object: input={input_data}, completion={completion}")
-    print("INCREMENT COMPLETIONS") 
+    #print("INCREMENT COMPLETIONS") 
     # True if appropriate 
     if_appropriate = check_flagged(input_data + completion) 
     if if_appropriate: 
@@ -83,17 +83,20 @@ def do_autocomplete():
             input_data, completion, topics[topic_index][1]
         )
         return jsonify(success=True)
-    print("Flagged as inappropriate")
+        print("Flagged as appropriate")
+    else: 
+        print("Flagged as not appropriate")
     return jsonify(success=False)
 
 
-
 def check_flagged(input_data):
-    prompt = omnicomplete.build_omni_complete_prompt(
+    prompt = omnicomplete_flag.build_flag(
     input_data, topic=topics[topic_index][0], topic_dir=topics[topic_index][1]
 )
     response = llm.prompt_json_flag(prompt)
-    if response == "True": 
+    print("THIS RESPONSE") 
+    print(response) 
+    if "True" in response: 
         return True
     return False 
 
