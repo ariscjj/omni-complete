@@ -1,218 +1,36 @@
 [
     {
-        "input": "how does ",
+        "input": "How does Vue",
         "completions": [
-            "UnoCSS with Vue.js"
-        ],
-        "hits": 5
-    },
-    {
-        "input": "How does UnoCSS ",
-        "completions": [
-            "compare to Tailwind CSS?"
-        ],
-        "hits": 4
-    },
-    {
-        "input": "What is Vue",
-        "completions": [
-            "JavaScript framework"
-        ],
-        "hits": 3
-    },
-    {
-        "input": "How does Vue.js ",
-        "completions": [
-            "integrate with UnoCSS?"
-        ],
-        "hits": 3
-    },
-    {
-        "input": "do i use the same ",
-        "completions": [
-            "presets for UnoCSS as I do for Windi CSS"
+            "How does Vue.js interact with UnoCSS?"
         ],
         "hits": 2
     },
     {
         "input": "How does UnoCSS",
         "completions": [
-            "compare to Tailwind CSS"
+            "interact with Vue.js?"
         ],
         "hits": 2
-    },
-    {
-        "input": "how does unocss compare to ",
-        "completions": [
-            "tailwind css"
-        ],
-        "hits": 2
-    },
-    {
-        "input": "How does Uno",
-        "completions": [
-            "CSS compare to Tailwind CSS"
-        ],
-        "hits": 2
-    },
-    {
-        "input": "how to integrate",
-        "completions": [
-            "UnoCSS with Vue.js"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "how can i ",
-        "completions": [
-            "integrate UnoCSS with Vue.js"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "whats the difference",
-        "completions": [
-            "between UnoCSS and Tailwind CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "How can I use",
-        "completions": [
-            "UnoCSS with Vue.js"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "how to ",
-        "completions": [
-            "integrate UnoCSS with Vue.js"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "is unocss the",
-        "completions": [
-            "same as Windi CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "Whats wrong with using tail",
-        "completions": [
-            "wind css"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "Can i reuse styles",
-        "completions": [
-            "from Windi CSS in UnoCSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "How does Vu",
-        "completions": [
-            "e.js integrate with UnoCSS?"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "how does UnoCSS compare ",
-        "completions": [
-            "to Tailwind CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "What is V",
-        "completions": [
-            "ue.js framework"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "What is Un",
-        "completions": [
-            "oCSS framework"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "Do I use",
-        "completions": [
-            "the same presets for UnoCSS as I do for Windi CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "how does unocss compa",
-        "completions": [
-            "re to Tailwind CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "What are the benefits ",
-        "completions": [
-            "of UnoCSS compared to Windi CSS"
-        ],
-        "hits": 1
     },
     {
         "input": "What is ",
         "completions": [
-            "UnoCSS framework"
+            "why UnoCSS?"
         ],
         "hits": 1
     },
     {
-        "input": "What is UnoCSS",
+        "input": "How does Javascript",
         "completions": [
-            "a CSS extension for Vue.js appplication"
+            "interact with UnoCSS?"
         ],
         "hits": 1
     },
     {
-        "input": "How does Vue",
+        "input": "Where do I ",
         "completions": [
-            "integrate UnoCSS with Vue.js"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "What is Vue.js",
-        "completions": [
-            "JavaScript framework"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "How does unocss compare to",
-        "completions": [
-            "Tailwind CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "how does unocss compare",
-        "completions": [
-            "to Tailwind CSS"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "How does Tailwind",
-        "completions": [
-            "UnoCSS compare to?"
-        ],
-        "hits": 1
-    },
-    {
-        "input": "How does UnoCSS integrate with ",
-        "completions": [
-            "Vue.js"
+            "start to use UnoCSS?"
         ],
         "hits": 1
     }
