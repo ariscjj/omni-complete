@@ -22,78 +22,83 @@ def build_omni_complete_prompt(input_value, topic="Vue.js", topic_dir="vuejs"):
     prompt = prompt.replace("{{input_value}}", input_value)
     return prompt
 
-def increment_or_create_previous_completions(input, completion, topic_dir):
-    new_query = input 
-    matched_query, max_embedding = find_closest_query(new_query)
-
-    if matched_query is not None:
-        # INCREASE QUERY COUNT 
-        query_embedding_store[matched_query]["completions"][completion][1] += 1 
-        print(f"New query matches with '{matched_query}' with similarity {similarity}")
-
-    else:
-        new_embedding = add_new_query(new_query, new_completion)
-
-    previous_completions_file = (
-        f"{PROMPT_ROOT_DIR}/knowledge_bases/{topic_dir}/previous_completions.json"
-    )
-  
-    # IS THIS NEEDED? 
-    completions_sorted_by_hits = sorted(
-        previous_completions, key=lambda x: x["hits"], reverse=True
-    )
-
-    # write back to file
-    with open(previous_completions_file, "w") as f:
-        json.dump(completions_sorted_by_hits, f, indent=4)
-
-
-
-
+# UNCOMMENT FOR EMBEDDINGS 
 # def increment_or_create_previous_completions(input, completion, topic_dir):
+    # new_query = input 
+
+    # UNCOMMENT FOR EMBEDDINGS  
+    # matched_query, max_embedding = find_closest_query(new_query)
+    
+    # matched_query = 1 
+
+    # if matched_query is not None:
+        # INCREASE QUERY COUNT 
+        # query_embedding_store[matched_query]["completions"][completion][1] += 1 
+        # print(f"New query matches with '{matched_query}' with similarity {similarity}")
+
+    # else:
+        # new_embedding = add_new_query(new_query, new_completion)
 
     # previous_completions_file = (
         # f"{PROMPT_ROOT_DIR}/knowledge_bases/{topic_dir}/previous_completions.json"
     # )
-
-    # """
-    # [
-        # {
-            # "input": "style this button with",
-            # "completions": [
-                # "tailwindcss and make it look like a switch",
-                # "unocss and make it look like a switch"
-            # ],
-            # "hits": 5
-        # },
-    # ...
-    # ]
-    # """
-    # previous_completions = open(previous_completions_file, "r").read()
-
-    # previous_completions = json.loads(previous_completions)
-    # matching_icase = [
-        # item
-        # for item in previous_completions
-        # if item["input"].lower() == input.lower()
-        # and any(
-            # completion.lower() in completion.lower()
-            # for completion in item["completions"]
-        # )
-    # ]
-
-    # if matching_icase:
-        # print("matched icase") 
-        # matching_icase[0]["hits"] += 1
-    # else:
-        # print("completely new completion") 
-        # new_completion = {"input": input, "completions": [completion], "hits": 1}
-        # previous_completions.append(new_completion)
-
+  
+    # IS THIS NEEDED? 
     # completions_sorted_by_hits = sorted(
         # previous_completions, key=lambda x: x["hits"], reverse=True
     # )
 
-#    write back to file
+    #write back to file
     # with open(previous_completions_file, "w") as f:
         # json.dump(completions_sorted_by_hits, f, indent=4)
+
+
+
+
+def increment_or_create_previous_completions(input, completion, topic_dir):
+
+    previous_completions_file = (
+        f"{PROMPT_ROOT_DIR}/knowledge_bases/{topic_dir}/previous_completions.json"
+    )
+
+    """
+    [
+        {
+            "input": "style this button with",
+            "completions": [
+                "tailwindcss and make it look like a switch",
+                "unocss and make it look like a switch"
+            ],
+            "hits": 5
+        },
+    ...
+    ]
+    """
+    previous_completions = open(previous_completions_file, "r").read()
+
+    previous_completions = json.loads(previous_completions)
+    matching_icase = [
+        item
+        for item in previous_completions
+        if item["input"].lower() == input.lower()
+        and any(
+            completion.lower() in completion.lower()
+            for completion in item["completions"]
+        )
+    ]
+
+    if matching_icase:
+        print("matched icase") 
+        matching_icase[0]["hits"] += 1
+    else:
+        print("completely new completion") 
+        new_completion = {"input": input, "completions": [completion], "hits": 1}
+        previous_completions.append(new_completion)
+
+    completions_sorted_by_hits = sorted(
+        previous_completions, key=lambda x: x["hits"], reverse=True
+    )
+
+   # write back to file
+    with open(previous_completions_file, "w") as f:
+        json.dump(completions_sorted_by_hits, f, indent=4)
