@@ -1,0 +1,72 @@
+[
+    {
+        "input": "How does UnoCSS",
+        "completions": [
+            "interact with Vue.js?"
+        ],
+        "hits": 4
+    },
+    {
+        "input": "What is UnoCSS",
+        "completions": [
+            "a style engine"
+        ],
+        "hits": 2
+    },
+    {
+        "input": "How does Javascript",
+        "completions": [
+            "interact with UnoCSS?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "Where do I ",
+        "completions": [
+            "start to use UnoCSS?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "How does ",
+        "completions": [
+            "Vue.js interact with UnoCSS?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "What is Vuejs",
+        "completions": [
+            "a framework for building web interfaces"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "How does Vue",
+        "completions": [
+            "UnoCSS work with Vue.js?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "How does Vuejs",
+        "completions": [
+            "interact with UnoCSS?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "What does Vuejs",
+        "completions": [
+            "interact with UnoCSS?"
+        ],
+        "hits": 1
+    },
+    {
+        "input": "Why does UnoCSS",
+        "completions": [
+            "work with Vue.js?"
+        ],
+        "hits": 1
+    }
+]

@@ -231,13 +231,6 @@
         "hits": 1
     },
     {
-        "input": "What is Javascript ",
-        "completions": [
-            "JavaScript framework"
-        ],
-        "hits": 1
-    },
-    {
         "input": "What is Tailwind",
         "completions": [
             "CSS framework"

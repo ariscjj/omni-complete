@@ -1,37 +1,233 @@
 [
     {
-        "input": "How does Vue",
-        "completions": [
-            "How does Vue.js interact with UnoCSS?"
-        ],
-        "hits": 2
-    },
-    {
         "input": "How does UnoCSS",
         "completions": [
             "interact with Vue.js?"
         ],
-        "hits": 2
+        "hits": [
+            5
+        ]
     },
     {
-        "input": "What is ",
+        "input": "Why does UnoCSS",
         "completions": [
-            "why UnoCSS?"
+            "work with Vue.js?"
         ],
-        "hits": 1
+        "hits": [
+            4
+        ]
+    },
+    {
+        "input": "How does UnoCSS ",
+        "completions": [
+            "interact with Vue.js?",
+            "work with Vue.js?"
+        ],
+        "hits": [
+            3,
+            1
+        ]
+    },
+    {
+        "input": "Why does UnoCSS",
+        "completions": [
+            "work with Vue.js?"
+        ],
+        "hits": [
+            3
+        ]
+    },
+    {
+        "input": "What is UnoCSS",
+        "completions": [
+            "a style engine"
+        ],
+        "hits": [
+            2
+        ]
+    },
+    {
+        "input": "How does UnoCSS ",
+        "completions": [
+            "interact with Vue.js?",
+            "work with Vue.js?"
+        ],
+        "hits": [
+            2,
+            1
+        ]
+    },
+    {
+        "input": "Where does UnoCSS ",
+        "completions": [
+            "start to work with Vue.js?"
+        ],
+        "hits": [
+            2
+        ]
+    },
+    {
+        "input": "Why does UnoCSS",
+        "completions": [
+            "work with Vue.js?"
+        ],
+        "hits": [
+            2
+        ]
     },
     {
         "input": "How does Javascript",
         "completions": [
             "interact with UnoCSS?"
         ],
-        "hits": 1
+        "hits": [
+            1
+        ]
     },
     {
         "input": "Where do I ",
         "completions": [
             "start to use UnoCSS?"
         ],
-        "hits": 1
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does ",
+        "completions": [
+            "Vue.js interact with UnoCSS?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "What is Vuejs",
+        "completions": [
+            "a framework for building web interfaces"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does Vue",
+        "completions": [
+            "UnoCSS work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does Vuejs",
+        "completions": [
+            "interact with UnoCSS?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "What does Vuejs",
+        "completions": [
+            "interact with UnoCSS?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "Uno CSS ",
+        "completions": [
+            "with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "Where does Uno CSS ",
+        "completions": [
+            "start to work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does UnoCSS ",
+        "completions": [
+            "interact with Vue.js?",
+            "work with Vue.js?"
+        ],
+        "hits": [
+            1,
+            1
+        ]
+    },
+    {
+        "input": "Where does UnoCSS ",
+        "completions": [
+            "start to work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "UnoCSS Compatibility ",
+        "completions": [
+            "with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "UnoCSS compatibility with ",
+        "completions": [
+            "Vue.js"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does UnoCSS ",
+        "completions": [
+            "work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "Why does UnoCSS",
+        "completions": [
+            "work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "How does UnoCSS",
+        "completions": [
+            "interact with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
+    },
+    {
+        "input": "Where does UnoCSS",
+        "completions": [
+            "start to work with Vue.js?"
+        ],
+        "hits": [
+            1
+        ]
     }
 ]
