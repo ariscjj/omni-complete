@@ -56,7 +56,6 @@ def build_omni_complete_prompt(input_value, topic="Vue.js", topic_dir="vuejs"):
 
 
 def increment_or_create_previous_completions(input, completion, topic_dir):
-
     previous_completions_file = (
         f"{PROMPT_ROOT_DIR}/knowledge_bases/{topic_dir}/previous_completions.json"
     )
@@ -69,7 +68,7 @@ def increment_or_create_previous_completions(input, completion, topic_dir):
                 "tailwindcss and make it look like a switch",
                 "unocss and make it look like a switch"
             ],
-            "hits": 5
+            "hits": [5, 3] 
         },
     ...
     ]
@@ -77,26 +76,41 @@ def increment_or_create_previous_completions(input, completion, topic_dir):
     previous_completions = open(previous_completions_file, "r").read()
 
     previous_completions = json.loads(previous_completions)
-    matching_icase = [
-        item
-        for item in previous_completions
-        if item["input"].lower() == input.lower()
-        and any(
-            completion.lower() in completion.lower()
-            for completion in item["completions"]
-        )
-    ]
+    for item in previous_completions: 
+        if item["input"].lower() == input.lower(): 
+            complist = item["completions"] 
+            hitlist = item["hits"] 
+            found = False
+            for i in range(len(complist)):
+                if completion.lower() == complist[i].lower(): 
+                    print("Previous completion matched!!") 
+                    found = True 
+                    hitlist[i] += 1
+                    
+                    #sort completions based on popularity only if
+                    # if new hit count is higher 
+                    if i > 0: 
+                        if hitlist[i] > hitlist[i-1]: 
+                            paired = list(zip(hitlist, complist))
+                            sorted_paired = sorted(paired, key=lambda x: x[0]) 
+                            sorted_phrases = [phrase for count, phrase in sorted_paired] 
+                            sorted_counts = [count for count, phrase in sorted_paired] 
+                            item["completions"] = sorted_phrases 
+                            item["hits"] = sorted_counts 
+                            print(sorted_phrases) 
+                    break 
 
-    if matching_icase:
-        print("matched icase") 
-        matching_icase[0]["hits"] += 1
+            if not found: 
+                item["completions"].append(completion) 
+                item["hits"].append(1) 
     else:
         print("completely new completion") 
-        new_completion = {"input": input, "completions": [completion], "hits": 1}
+        new_completion = {"input": input, "completions": [completion], "hits": [1]}
         previous_completions.append(new_completion)
 
+    # completions sorted by top hit 
     completions_sorted_by_hits = sorted(
-        previous_completions, key=lambda x: x["hits"], reverse=True
+        previous_completions, key=lambda x: x["hits"][0], reverse=True
     )
 
    # write back to file

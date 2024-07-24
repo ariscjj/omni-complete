@@ -31,6 +31,7 @@ def prompt_json(prompt: str):
             "type": "json_object",
         },
     )
+    print("chat completion created, api connection established") 
     end_time = time.time() 
     total_time = end_time - start_time
     print("TIME TO CREATE COMPLETION: ", total_time) 
@@ -51,5 +52,6 @@ def prompt_json_flag(prompt:str):
             "type": "text",
         },
     )
+    print("chat completion created prompt_json_flag, api connection established") 
     return chat_completion.choices[0].message.content
 
