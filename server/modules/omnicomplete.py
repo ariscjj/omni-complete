@@ -5,7 +5,7 @@ import greet
 PROMPT_ROOT_DIR = os.getenv("PROMPT_ROOT_DIR")
 
 def build_omni_complete_prompt(input_value, topic="Vue.js", topic_dir="vuejs"):
-
+    PROMPT_ROOT_DIR = "/Users/ariszhu/Documents/__Instalily/omni-complete/prompt_tests/omnicomplete"
     prompt = open(f"{PROMPT_ROOT_DIR}/prompt.txt", "r").read()
 
     previous_completions = open(
@@ -51,8 +51,6 @@ def build_omni_complete_prompt(input_value, topic="Vue.js", topic_dir="vuejs"):
     #write back to file
     # with open(previous_completions_file, "w") as f:
         # json.dump(completions_sorted_by_hits, f, indent=4)
-
-
 
 
 def increment_or_create_previous_completions(input, completion, topic_dir):
